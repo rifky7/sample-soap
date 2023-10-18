@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:v1="http://www.oracle.com/external/services/sampleservice/request/v1.0"
+           xmlns:tns="http://www.oracle.com/external/services/sampleservice/request/v1.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           targetNamespace="http://www.oracle.com/external/services/sampleservice/request/v1.0"
+           elementFormDefault="qualified">
+
+    <xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/"/>
+
+    <!-- Define the authenticationheader -->
+    <xs:element name="authenticationheader">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define the sampleservicerq -->
+    <xs:element name="sampleservicerq">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="service_id" type="xs:string"/>
+                <xs:element name="order_type" type="xs:string"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="trx_id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Define the sampleservicers -->
+    <xs:element name="sampleservicers">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="error_code" type="xs:string"/>
+                <xs:element name="error_msg" type="xs:string"/>
+                <xs:element name="trx_id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
